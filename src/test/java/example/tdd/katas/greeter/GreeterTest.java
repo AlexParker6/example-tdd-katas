@@ -12,4 +12,16 @@ public class GreeterTest {
         assertEquals("Hello Bob", greeter.greet("Bob"));
         assertEquals("Hello Bill", greeter.greet("Bill"));
     }
+
+    @Test
+    public void shouldTrimName() {
+        Greeter greeter = new Greeter();
+        assertEquals("Hello Bob", greeter.greet("  Bob  "));
+        assertEquals("Hello Bill", greeter.greet("    Bill     "));
+    }
+
+    @Test
+    public void shouldCapitaliseName() {
+        Greeter greeter =
+    }
 }
