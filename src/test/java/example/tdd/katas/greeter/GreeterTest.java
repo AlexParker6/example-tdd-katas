@@ -22,6 +22,8 @@ public class GreeterTest {
 
     @Test
     public void shouldCapitaliseName() {
-        Greeter greeter =
+        Greeter greeter = new Greeter();
+        assertEquals("Hello Bob", greeter.greet("bob"));
+        assertEquals("Hello Bill", greeter.greet("bill"));
     }
 }
