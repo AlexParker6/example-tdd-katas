@@ -30,24 +30,25 @@ public class GreeterTest {
     @Test
     public void shouldGreetGoodMorning() {
         Greeter greeter = new Greeter();
-        assertEquals("Good morning Bob", greeter.greet(" bob"));
-        assertEquals("Good morning Bill", greeter.greet(" bill"));
+        assertEquals("Good morning Bob", greeter.greet(" bob"), greeter.whatTime(10));
+        assertEquals("Good morning Bill", greeter.greet(" bill"), greeter.whatTime(10));
 
     }
 
     @Test
     public void shouldGreetGoodEvening() {
         Greeter greeter = new Greeter();
-        assertEquals("Good evening Bob", greeter.greet(" bob"));
-        assertEquals("Good evening Bill", greeter.greet(" bill"));
+        assertEquals("Good evening Bob", greeter.whatTime(20), greeter.greet(" bob"));
+        assertEquals("Good evening Bill", greeter.whatTime(19), greeter.greet(" bill"));
 
     }
 
     @Test
     public void shouldGreetGoodnight() {
-        Greeter greeter = new Greeter();
-        assertEquals("Good night Bob", greeter.greet(" bob"));
-        assertEquals("Good night Bill", greeter.greet(" bill"));
+        Greeter greeter;
+        greeter = new Greeter();
+        assertEquals("Good night Bob", greeter.whatTime(23), greeter.greet(" bob"));
+        assertEquals("Good night Bill", greeter.whatTime(2), greeter.greet(" bill"));
 
     }
 }
