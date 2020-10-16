@@ -1,26 +1,27 @@
 package example.tdd.katas.greeter;
-public class Greeter<name> {
+public class Greeter {
 
-
-    private String name;
-
-    String greet(String name) {
-        name = name.trim();
-        name = name.substring(0,1).toUpperCase() + name.substring(1);
-        return "Hello " + name;
-
-
+    private int timeOfDay;
+    public Greeter(int timeOfDay){
+        this.timeOfDay = timeOfDay;
     }
-    String whatTime(int timeOfDay) {
 
-        if ((timeOfDay >= 6) && (timeOfDay <= 12)) {
-            return "Good morning " + name;
-        } else if ((timeOfDay >= 18) && (timeOfDay < 22)) {
-            return "Good evening " + name;
-        } else if ((timeOfDay > 22) && (timeOfDay <= 5.59)){
-            return "Good night " + name;
+    public String greet(final String name){
+        String newName = name.trim();
+        newName = newName.substring(0,1).toUpperCase() + newName.substring(1);
+        return greeting() + newName;
+    }
+    private String greeting() {
+        if ((timeOfDay >= 6) && (timeOfDay <= 12)){
+            return "Good morning ";
+        }
+        else if ((timeOfDay >= 18) && (timeOfDay < 22)) {
+            return "Good evening ";
+        }
+        else if ((timeOfDay > 22) || (timeOfDay <= 5.59)){
+            return "Good night ";
         }
         else
-            return "Hello " + name;
+            return "Hello ";
     }
 }
